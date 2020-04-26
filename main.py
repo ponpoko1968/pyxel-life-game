@@ -22,11 +22,6 @@ class App:
         if pyxel.btnp(pyxel.KEY_Q):
             pyxel.quit()
 
-        # if self.c == pyxel.frame_count:
-        #     return
-        # self.c = pyxel.frame_count
-
-
     def draw(self):
         pyxel.cls(0)
         next_world = self.world.copy()
@@ -60,6 +55,7 @@ class App:
                         (_x - 1, _y + 1), (_x, _y + 1), (_x + 1, _y + 1),
         ]
         count = 0
+        # 上下左右の端のセルは、それぞれ反対側に閉じているとして処理
         for pos in neighbor_pos:
             (x, y) = pos
             if x < 0 :
